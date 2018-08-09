@@ -20,15 +20,15 @@
 				<c:forEach var="employee" items="${employees}" varStatus="status">
 					<%-- 行の記述 --%>
 					<tr class="row${status.count % 2}">
-						<td><c:out value="${employees.code}"></c:out></td>
-						<td><c:out value="${employees.name}"></c:out></td>
+						<td><c:out value="${employee.code}"></c:out></td>
+						<td><c:out value="${employee.name}"></c:out></td>
 						<td>
 							<c:choose>
-								<c:when test="${employees.delete_flag == 1}">
+								<c:when test="${employee.delete_flag == 1}">
 									（削除済み）
 								</c:when>
 								<c:otherwise>
-									<a href='<c:url value='/employees/show?id=${employee.id}'></c:url>'>詳細を表示</a>
+									<a href="<c:url value='/employees/show?id=${employee.id}'></c:url>">詳細を表示</a>
 								</c:otherwise>
 							</c:choose>
 						</td>
@@ -47,12 +47,12 @@
 			 			<c:out value="${i}"></c:out>&nbsp;
 			 		</c:when>
 			 		<c:otherwise>
-			 			<a href="${pageContext.request.contextPath}/index?page=${i}"><c:out value="${i}"></c:out></a>&nbsp;
+			 			<a href="<c:url value='/employees/index?page=${i}' />"><c:out value="${i}" /></a>&nbsp;
 			 		</c:otherwise>
 			 	</c:choose>
 			 </c:forEach>
 		</div>
-		<p><a href="${pageContext.request.contextPath}/new">従業員の登録</a></p>
+		<p><a href="<c:url value='/employees/new' />">従業員の登録</a></p>
 
 	</c:param>
 </c:import>
