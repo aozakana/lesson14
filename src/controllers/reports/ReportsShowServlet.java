@@ -14,7 +14,7 @@ import models.Report;
 import utils.DBUtil;
 
 /**
- * Servlet implementation class ReportsShowServlet
+ * Servlet implementation class ReportsShowServlet2
  */
 @WebServlet("/reports/show")
 public class ReportsShowServlet extends HttpServlet {
@@ -29,9 +29,9 @@ public class ReportsShowServlet extends HttpServlet {
     }
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         EntityManager em = DBUtil.createEntityManager();
 
         Report r = em.find(Report.class,Integer.parseInt(request.getParameter("id")));

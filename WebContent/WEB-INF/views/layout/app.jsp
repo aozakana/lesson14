@@ -31,7 +31,7 @@
 					${param.content}
 				</div>
 				<div id="footer">
-					by AOZAKANA.
+					by Y.D
 				</div>
 			</div>
 		</div>
